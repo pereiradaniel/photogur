@@ -2,3 +2,9 @@
 
 <p><%= @picture.title %>, <%= @picture.artist %></p>
 <%= image_tag @picture.url %>
+
+<h2>Comments</h2>
+<%= render @picture.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
