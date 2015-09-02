@@ -23,10 +23,10 @@ class PicturesController < ApplicationController
     end
   end
 
-
-  private
-  def picture_params
-    params.require(:picture).permit(:artist, :title, :url)
+  def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    redirect_to pictures_url
   end
 
   def edit
@@ -43,10 +43,9 @@ class PicturesController < ApplicationController
     end
   end
 
-  def destroy
-    @picture = Picture.find(params[:id])
-    @picture.destroy
-    redirect_to pictures_url
+  private
+  def picture_params
+    params.require(:picture).permit(:artist, :title, :url)
   end
 
 end
