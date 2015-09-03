@@ -3,6 +3,11 @@
 <p><%= @picture.title %>, <%= @picture.artist %></p>
 <%= image_tag @picture.url %>
 
+<h2>Votes</h2>
+<p><%= @picture.upvotes %> x upvotes.</p>
+<p><%= @picture.downvotes %> x downvotes.</p>
+<%= render 'pictures/votes' %>
+
 <h2>Comments</h2>
 <%= render @picture.comments %>
 

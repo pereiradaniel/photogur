@@ -1,0 +1,6 @@
+<%= form_for @picture do |f| %>
+<%= f.hidden_field :upvote, value: true %>
+<%= f.submit "Upvote" %>
+<%= f.hidden_field :downvote, value: true %>
+<%= f.submit "Downvote" %>
+<% end %>
